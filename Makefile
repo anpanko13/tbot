@@ -11,17 +11,13 @@ install:
 
 build:
 	@echo "Building the project..."
-	docker build --no-cache -t hervlokossou/allmight_bot:latest .
-
-check-quality:
-	@echo "Checking code quality..."
-	sonar-scanner -Dsonar.projectKey=hervlokossou -Dsonar.sources=. -Dsonar.host.url=http://15.237.5.155:9000 -Dsonar.token=sqp_a28f8acd0eebb9a1238e977054361e2620414410
+	docker build --no-cache -t akakounpanko31/my_bot:latest .
 
 make deploy:
 	@echo "Deploying the project..."
 	chmod +x deploy.sh
 	./deploy.sh
-	docker run -d -p 8001:80 hervlokossou/allmight_bot
+	docker run -d -p 8010:80 akakounpanko31/my_bot
 
 serve:
 	@echo "Starting development server..."
