@@ -13,7 +13,7 @@ pipeline {
                 }
             }
         }
-    }
+    
         stage('Inject Env') {
             steps {
                 script {
